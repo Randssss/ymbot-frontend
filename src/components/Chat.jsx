@@ -418,7 +418,7 @@ export default function Chat({ username, onLogout }) {
     setMessages(p => [...p, { role:'user', text:pesan, time:now() }]);
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:3001/api/chat', { username, pesan });
+      const res = await axios.post('https://ymbot-backend-production.up.railway.app/api/chat', { username, pesan });
       setMessages(p => [...p, { role:'bot', text:res.data.jawaban, time:now() }]);
     } catch {
       setMessages(p => [...p, { role:'bot', text:'❌ Gagal konek ke server. Pastikan backend jalan ya!', time:now() }]);

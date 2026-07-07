@@ -13,7 +13,7 @@ export default function Login({ onLogin }) {
     setLoading(true);
     setError('');
     try {
-      await axios.post('http://localhost:3001/api/login', { username, password });
+      await axios.post('https://ymbot-backend-production.up.railway.app/api/login', { username, password });
       onLogin(username);
     } catch (err) {
       setError('Login gagal! Cek NIM dan password kamu.');
